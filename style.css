@@ -88,13 +88,13 @@ input[type='submit'] {
 }
 
 .region {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: bold;
   padding-left: .5rem;
 }
 li {
   margin-left: 1.4rem;
-  font-size: .7rem;
+  font-size: 1rem;
 }
 
 .img_wrapper {
@@ -116,4 +116,30 @@ footer {
   position: absolute;
   bottom: 0;
   left: 50%;
+}
+
+
+/*  MEDIA QUERIES */
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 90%;
+}
+#leftCol {
+  width: 100%;
+}
+.img_wrapper  {
+  width: 100%;
+}
+.img_wrapper img {
+    max-width: 100%;
+    max-height: 60vh;
+    padding: .5rem;
+}
+}
+
+@media only screen and (max-width: 900px) {
+  .container {
+    width: 90%;
+  }
 }

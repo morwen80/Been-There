@@ -22,7 +22,9 @@ const addACountry = async (event) => {
   const myCountry = countries.find(country => country.name.includes(inputValue))
   const group = document.querySelector(`.${myCountry.region.toLowerCase()}`)
   let myEl = document.createElement('li')
-  myEl.innerText = myCountry.name
+  // myEl.innerText = myCountry.name
+  let deleteBtn = document.createElement('button').innerHTML = "x"
+  myEl.innerHTML = `${myCountry.name} ${deleteBtn}`
   group.appendChild(myEl)
 
   group.querySelector('.counter').innerText = `(${group.querySelectorAll('li').length})`
@@ -31,14 +33,14 @@ const addACountry = async (event) => {
   addAPicture(myCountry);
 
   myEl.addEventListener('click', () => {
-  myEl.remove()
+    myEl.remove();
+    group.querySelector('.counter').innerText = `(${group.querySelectorAll('li').length})`
 
 })
-
 }
 
-countryForm.addEventListener('submit', addACountry)
 
+countryForm.addEventListener('submit', addACountry)
 
 
 const addAPicture = async (country) => {
