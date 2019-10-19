@@ -122,8 +122,15 @@ footer {
 /*  MEDIA QUERIES */
 
 @media only screen and (max-width: 600px) {
+
+
   .container {
+    margin: 0 auto;
+    top: 0;
+    left: 0;
     width: 90%;
+    position: relative;
+    transform: none;
 }
 #leftCol {
   width: 100%;
@@ -142,4 +149,5 @@ footer {
   .container {
     width: 90%;
   }
+
 }

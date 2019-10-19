@@ -16,9 +16,9 @@ const addACountry = async (event) => {
   event.preventDefault();
 
   const inputEl = event.target.querySelector('#countryName')
-  const inputValue = inputEl.value
+  const inputValue = inputEl.value.charAt(0).toUpperCase() + inputEl.value.slice(1)
   const countries = await getData(`https://restcountries.eu/rest/v2/name/${inputValue}`)
-  // const myCountry = countries.find(country => country.name === inputValue)
+
   const myCountry = countries.find(country => country.name.includes(inputValue))
   const group = document.querySelector(`.${myCountry.region.toLowerCase()}`)
   let myEl = document.createElement('li')
